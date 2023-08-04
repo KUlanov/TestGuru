@@ -1,0 +1,23 @@
+* [33mcommit 5cab8d0fa3da9806261bb148c9dc9400b5359101[m[33m ([m[1;36mHEAD -> [m[1;32mLesson2[m[33m, [m[1;31morigin/Lesson2[m[33m)[m
+[31m|[m Author: Konstantin Ulanov <GKondor@mail.ru>
+[31m|[m Date:   Thu Aug 3 23:06:27 2023 +0500
+[31m|[m 
+[31m|[m     Add linl
+[31m|[m 
+* [33mcommit e454f2a333ef54cf0aee802925a77867765e438f[m
+[31m|[m Author: Konstantin Ulanov <GKondor@mail.ru>
+[31m|[m Date:   Thu Aug 3 22:56:52 2023 +0500
+[31m|[m 
+[31m|[m     Add about
+[31m|[m 
+* [33mcommit 7298bfd74cb515747a13d6a32121d4ecbe39a8dc[m
+[31m|[m Author: Konstantin Ulanov <GKondor@mail.ru>
+[31m|[m Date:   Thu Aug 3 22:23:44 2023 +0500
+[31m|[m 
+[31m|[m     Add time zone + version
+[31m|[m 
+* [33mcommit a0090e6f294bbdee0de207a76afadb18a5e0ee4b[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+  Author: Konstantin Ulanov <GKondor@mail.ru>
+  Date:   Wed Aug 2 18:48:21 2023 +0500
+  
+      start
