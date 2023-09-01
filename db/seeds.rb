@@ -43,5 +43,6 @@ users = User.create([{ name: 'Koty'}])
 
 usertests = Usertest.create!([
   { user_id: users[0].id, test_id: tests[1].id, status: true },
-  { user_id: users[0].id, test_id: tests[3].id, status: false}
+  { user_id: users[0].id, test_id: tests[3].id, status: false},
+  { user_id: users[0].id, test_id: tests[4].id, status: false}
 ])
