@@ -10,6 +10,7 @@ Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
 User.destroy_all
+Usertest.destroy_all
 
 categories= Category.create!([
   { title: 'Frontend' }, 
@@ -38,4 +39,9 @@ answers = Answer.create!([
   { body: '4', correct: true, question_id: questions[3].id },
   { body: '5', correct: true, question_id: questions[4].id }
 ])
-users = User.create!([{ name: 'Koty'}])
+users = User.create([{ name: 'Koty'}])
+
+usertests = Usertest.create!([
+  { user_id: users[0].id, test_id: tests[1].id, status: true },
+  { user_id: users[0].id, test_id: tests[3].id, status: false}
+])
