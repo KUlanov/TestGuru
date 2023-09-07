@@ -10,19 +10,20 @@ Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
 User.destroy_all
-Usertest.destroy_all
+TestsUser.destroy_all
 
+users = User.create([{ name: 'Koty'}])
 categories= Category.create!([
   { title: 'Frontend' }, 
   { title: 'Backend'}, 
   { title: 'Movie Development'}
 ]) 
 tests = Test.create!([
-  { title: 'HTML', level: 1, category_id: categories[2].id},
-  { title: 'Java', level: 3, category_id: categories[1].id},
-  { title: 'GO', level: 3, category_id: categories[0].id},
-  { title: 'Ruby', level: 2, category_id: categories[0].id},
-  { title: 'C#', level: 2, category_id: categories[1].id}
+  { title: 'HTML', user_id: users[0].id, level: 1, category_id: categories[2].id},
+  { title: 'Java', user_id: users[0].id, level: 3, category_id: categories[1].id},
+  { title: 'GO', user_id: users[0].id, level: 3, category_id: categories[0].id},
+  { title: 'Ruby', user_id: users[0].id, level: 2, category_id: categories[0].id},
+  { title: 'C#', user_id: users[0].id, level: 2, category_id: categories[1].id}
 ])
 questions = Question.create!([
   { body: 'Различие между селекторами идентификаторов и классов ... ', test_id: tests[0].id},
@@ -39,9 +40,8 @@ answers = Answer.create!([
   { body: '4', correct: true, question_id: questions[3].id },
   { body: '5', correct: true, question_id: questions[4].id }
 ])
-users = User.create([{ name: 'Koty'}])
 
-usertests = Usertest.create!([
+tests_users = TestsUser.create!([
   { user_id: users[0].id, test_id: tests[1].id, status: true },
   { user_id: users[0].id, test_id: tests[3].id, status: false},
   { user_id: users[0].id, test_id: tests[4].id, status: false}
