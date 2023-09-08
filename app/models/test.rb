@@ -4,6 +4,11 @@ class Test < ApplicationRecord
   has_many :questions
   belongs_to :category
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
+
+  validates :title, presence: true
+  validates :level, numericality: {only_integer: true},
+                    numericality: {greater_than_or_equal_to: 0}
+                    
   
   scope :test_of_category, -> (category_name) {Category.find_by(title: category_name).tests.order(title: :DESC)}
 
