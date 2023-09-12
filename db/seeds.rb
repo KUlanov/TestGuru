@@ -12,7 +12,7 @@ Answer.destroy_all
 User.destroy_all
 TestsUser.destroy_all
 
-users = User.create([{ name: 'Koty'}])
+users = User.create([{ name: 'Koty', email: 'GKondor@mail.ru'}])
 categories= Category.create!([
   { title: 'Frontend' }, 
   { title: 'Backend'}, 
