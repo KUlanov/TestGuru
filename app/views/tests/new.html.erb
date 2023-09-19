@@ -1,0 +1,6 @@
+<h1>Create New Test</h1>
+<form action= "/tests" method="post">
+<input type="text" name="test[title]" id="test-title">
+<input type="submit" value="Create">
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+</form>
