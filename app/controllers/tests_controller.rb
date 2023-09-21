@@ -9,8 +9,17 @@ class TestsController < ApplicationController
   end
   
   def create
-    result = ["Class: #{params.class}","Parameters: #{params.inspect}"]
-  
-    render plain: result.join("\n")
+    test = Test.new(test_params)
+    test.user_id= 1
+    test.category_id = 1
+    test.save!
+    render plain: test.inspect
   end
+
+  private
+
+  def test_params
+    params.require(:test).permit(:title, :level)
+  end
+
 end
