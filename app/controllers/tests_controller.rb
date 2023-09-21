@@ -10,8 +10,8 @@ class TestsController < ApplicationController
   
   def create
     test = Test.new(test_params)
-    test.user_id= 1
-    test.category_id = 1
+    test.user_id= User.first.id
+    test.category_id = Category.first.id
     test.save!
     render plain: test.inspect
   end

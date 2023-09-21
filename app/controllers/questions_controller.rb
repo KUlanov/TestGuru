@@ -18,13 +18,16 @@ class QuestionsController < ApplicationController
 
   def create
     question = @tests.questions.new(question_params)
-    question.save!
-    render plain: question.inspect
+    if question.save
+      render plain: 'Question create!'
+    else
+      render plain: 'Question not create!'
+    end
   end
 
   def destroy
-    @question.destroy!
-    render plain 'Question destroy.'
+    @question.destroy
+    render plain: 'Question destroy.'
   end
 
 private
