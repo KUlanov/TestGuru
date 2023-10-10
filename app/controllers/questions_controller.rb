@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render plain: @question.body
+    
   end
 
   def new
