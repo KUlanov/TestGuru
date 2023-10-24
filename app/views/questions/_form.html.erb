@@ -1,5 +1,6 @@
 <%= form_with(model: [@test, @question]) do |form| %>
   
+  <h1><%= question_header(@question) %> test question:</h1>
   <%= render 'shared/errors', resource: @question %>
   <p>
     <%= form.label :Body %><br>
