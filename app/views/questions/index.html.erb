@@ -1,0 +1,10 @@
+<h1>Questions</h1>
+
+<p>
+  <%= link_to 'New question', new_test_question_path %>
+</p>
+
+  <%= render 'list', questions: @questions %>  
+</table>
+
+<%= link_to 'Tests', tests_path %>
