@@ -1,9 +1,7 @@
 class User < ApplicationRecord
-  #has_many :tests_users
   has_many :test_passages
-  #has_many :tests, through: :tests_users
   has_many :tests, through: :test_passages
-  has_many :authors_tests, inverse_of: 'author'
+  has_many :authors_tests, class_name: 'Test', foreign_key: :user_id
 
   validates :name, presence: true,
                    uniqueness: true

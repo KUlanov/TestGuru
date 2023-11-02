@@ -1,5 +1,5 @@
 class Test < ApplicationRecord
-  has_many :tests_users
+  has_many :tests_passages
   has_many :users, through: :tests_passages
   has_many :questions
   belongs_to :category
