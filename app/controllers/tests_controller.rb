@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
 
   before_action :set_test, only: %i[new show edit update destroy start]
-  before_action :set_user
+  before_action :set_user, only: %i[start]
 
   def index
     #render html:  '<h1>All tests</h1>'.html_safe
