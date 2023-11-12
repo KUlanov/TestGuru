@@ -6,6 +6,6 @@
   <p style="color:red;"> Вы не сдали тест!</p>
 <% end %>
 
-<p> Выполнено <%= @test_passage.percent.to_int %> процентов. </p>
+<p> Выполнено <%= @test_passage.percent_answers_correct.to_int %> процентов. </p>
 
 <%= link_to 'Вернуться к списку тестов', tests_path %>
