@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
-  root 'tests#index'
+  get 'users/new'
+  root 'users#new'
+  
+  get :signup, to: 'users#new'
+
+  resources :users, only: :create
 
   resources :tests do
     resources :questions, shallow: true do
