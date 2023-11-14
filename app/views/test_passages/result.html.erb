@@ -1,0 +1,11 @@
+<h1>The <%= @test_passage.test.title %> test was complited!</h1>
+
+<% if @test_passage.succesfully? %>
+  <p style="color:green;"> Тест успешно пройден!</p>
+<% else %>
+  <p style="color:red;"> Вы не сдали тест!</p>
+<% end %>
+
+<p> Выполнено <%= @test_passage.percent_answers_correct.to_int %> процентов. </p>
+
+<%= link_to 'Вернуться к списку тестов', tests_path %>

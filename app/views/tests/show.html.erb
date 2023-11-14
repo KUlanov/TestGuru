@@ -12,6 +12,9 @@
 
 <%= link_to 'Edit', edit_test_path(@test) %>
 <%= link_to 'Back', tests_path %>
-<%= render 'questions/list', questions: @test.questions %>
 
-<%= link_to 'Questions', test_questions_path(@test.id) %>
+<p>
+  <%= link_to 'New question', new_test_question_path(@test) %>
+</p>
+
+<%= render 'questions/list', questions: @test.questions %>
