@@ -1,10 +1,12 @@
 class ApplicationController < ActionController::Base
   #protect_from_forgery with: :expection
-
+  
+  before_action :authenticate_user!
+  
   helper_method :current_user,
                 :logged_in?
-  
-  private
+
+private
 
   def authenticate_user!
     unless current_user

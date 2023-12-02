@@ -8,6 +8,13 @@ class User < ApplicationRecord
 
   has_secure_password
   
+  VALID_EMAIL = /\w+@/ # Для упрощения тестирования
+  
+  validates :email, presence: true,
+             uniqueness: true,
+             format: { with: VALID_EMAIL}
+          
+
   def user_level_test(level)
     tests.where(tests: {level: level})
   end
