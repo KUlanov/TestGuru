@@ -20,7 +20,7 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
-    @test.user_id= @current_user.id
+    @test.user_id= current_user.id
     if @test.save
       redirect_to @test
     else
@@ -42,8 +42,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @current_user.tests.push(@test)
-    redirect_to @current_user.test_passage(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private
