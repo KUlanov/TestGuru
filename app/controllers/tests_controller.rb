@@ -1,11 +1,8 @@
 class TestsController < ApplicationController
 
-  before_action :set_test, only: %i[new show edit update destroy start]
-  before_action :set_user, only: %i[start]
-
+   before_action :set_test, only: %i[show edit update destroy start]
+  
   def index
-    #render html:  '<h1>All tests</h1>'.html_safe
-    #render json: { tests: Test.all }
     @tests = Test.all
   end
   
@@ -22,8 +19,7 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.new(test_params)
-    @test.user_id= User.first.id
+    @test = current_user.authors_tests.new(test_params)
     if @test.save
       redirect_to @test
     else
@@ -45,8 +41,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private
@@ -59,7 +55,4 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def set_user
-    @user = User.first
-  end
 end

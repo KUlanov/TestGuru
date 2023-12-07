@@ -1,0 +1,11 @@
+<% if logged_in? %>
+  <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
+  <p class="nav user"><%= link_to "Log out", logout_path %></p>
+<% else %>
+  <h1><%= link_to 'TestGuru', login_path %></h1>
+  <p class="nav user">
+    <%= link_to 'Sign Up', signup_path %> |
+    <%= link_to 'Log In', login_path %>
+  </p>
+
+<% end %>
