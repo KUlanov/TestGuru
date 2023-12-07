@@ -8,8 +8,8 @@ module ApplicationHelper
   end
 
   def flash_message
-    flash.each do |type, msg|
-      " #{content_tag :p, msg, class: :type}"
-    end
+    flash.map do |type, msg|
+      content_tag :p, msg, class: :type
+    end.join().html_safe
   end
 end
