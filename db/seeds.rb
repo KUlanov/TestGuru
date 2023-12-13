@@ -5,14 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Category.destroy_all
-Test.destroy_all
-Question.destroy_all
-Answer.destroy_all
-User.destroy_all
-TestsUser.destroy_all
 
-users = User.create([{ name: 'Koty', email: 'GKondor@mail.ru'}])
+=begin users = User.create([{ first_name: 'Koty', email: 'GKondor@mail.ru'}])
 categories= Category.create!([
   { title: 'Frontend' }, 
   { title: 'Backend'}, 
@@ -25,12 +19,14 @@ tests = Test.create!([
   { title: 'Ruby', user_id: users[0].id, level: 2, category_id: categories[0].id},
   { title: 'C#', user_id: users[0].id, level: 2, category_id: categories[1].id}
 ])
+=end
+
 questions = Question.create!([
-  { body: 'Различие между селекторами идентификаторов и классов ... ', test_id: tests[0].id},
-  { body: 'В чем разница между " == " и " === "?', test_id: tests[1].id},
-  { body: 'Чего нет в языке Go?', test_id: tests[2].id},
-  { body: 'Назовите четыре типа переменных, доступных в классе Ruby.', test_id: tests[3].id},
-  { body: 'Что такое Assembly в C#?', test_id: tests[4].id}
+  { body: 'Различие между селекторами идентификаторов и классов ... ', test_id: test[1].id},
+  { body: 'В чем разница между " == " и " === "?', test_id: test[2].id},
+  { body: 'Чего нет в языке Go?', test_id: test[3].id},
+  { body: 'Назовите четыре типа переменных, доступных в классе Ruby.', test_id: test[4].id},
+  { body: 'Что такое Assembly в C#?', test_id: test[5].id}
 ])
 answers = Answer.create!([
   { body: '1', correct: true, question_id: questions[0].id },
