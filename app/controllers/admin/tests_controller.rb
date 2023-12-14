@@ -1,4 +1,4 @@
-class Admin::TestsController < ApplicationController
+class Admin::TestsController < Admin::BaseController
 
    before_action :set_test, only: %i[show edit update destroy start]
   
@@ -21,7 +21,7 @@ class Admin::TestsController < ApplicationController
   def create
     @test = current_user.authors_tests.new(test_params)
     if @test.save
-      redirect_to @test
+      redirect_to [:admin, @test]
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Admin::TestsController < ApplicationController
 
   def update
     if @test.update(test_params)   
-      redirect_to @test
+      redirect_to [:admin, @test]
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Admin::TestsController < ApplicationController
 
   def destroy
     @test.destroy
-    redirect_to tests_path
+    redirect_to admin_tests_path
   end
 
   def start
