@@ -7,41 +7,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = @test.questions
   end
-
-  def show
-    
-  end
-
-  def new
-    @question = @test.questions.new
-  end
-
-  def create
-    @question = @test.questions.new(question_params)
-    if @question.save
-      redirect_to test_questions_path(@question.test)
-    else
-      render :new
-    end
-  end
-
-  def edit
-
-  end
-
-  def update
-    if @question.update(question_params)   
-      redirect_to test_questions_path(@question.test)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @question.destroy
-    redirect_to test_questions_path(@question.test)
-  end
-
+ 
 private
 
   def rescue_with_question_not_found
