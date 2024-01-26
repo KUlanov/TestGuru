@@ -1,0 +1,28 @@
+ru:
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+    
+  admin:
+    tests:
+      index:
+        header: "Доступные тесты"
+        new_test: "Новый тест"
+      new:
+        header_create: "Создать новый тест"
+      create:
+        success: "Тест успешно создан"
+      form:
+        back: "Назад"
